@@ -275,26 +275,8 @@ const VideoPlayer = () => {
             </div>
             
             <footer className="mt-8 text-center">
-                <svg 
-                    width="120" 
-                    height="40" 
-                    viewBox="0 0 120 40" 
-                    className="mx-auto mb-2"
-                >
-                    <rect width="120" height="40" rx="8" fill="#3b82f6" />
-                    <text 
-                        x="60" 
-                        y="25" 
-                        fontFamily="Arial" 
-                        fontSize="18" 
-                        fontWeight="bold" 
-                        fill="white" 
-                        textAnchor="middle"
-                    >
-                        MEDIA PLAYER
-                    </text>
-                </svg>
-                <p className="text-sm text-gray-400">© 2025 Media Player</p>
+              
+                <p className="text-sm text-gray-400">© 2025 Muhmd Samy</p>
             </footer>
         </div>
     );
