@@ -1,0 +1,167 @@
+body {
+    background-color: #080111;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.video-player {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.video-element {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.controls-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-player:hover .controls-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #3b82f6;
+    border-radius: 2px;
+    transform-origin: left;
+}
+
+.progress-handle {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+}
+
+.control-btn svg {
+    fill: currentColor;
+}
+
+.time-display {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.center-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(59, 130, 246, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.video-player:hover .center-play.visible,
+.center-play.visible {
+    opacity: 1;
+}
+
+.center-play:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: rgba(37, 99, 235, 0.9);
+}
+
+.center-play svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+    margin-left: 4px;
+}
+
+.center-play.pause svg {
+    margin-left: 0;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.center-play.visible {
+    animation: pulse 2s infinite;
+}
+
+footer {
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer svg {
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+footer svg:hover {
+    transform: scale(1.05);
+} 
